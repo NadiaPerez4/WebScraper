@@ -2,13 +2,14 @@ import requests
 from bs4 import BeautifulSoup
 
 # URL de la página de la que queremos hacer scraping
-url = "https://www.bbc.com/news"
+url = input("Write a URL: ")
 
 # Realizamos la petición HTTP a la página
 response = requests.get(url)
 
 # Verificamos que la petición haya sido exitosa
 if response.status_code == 200:
+    print("Success!")
     print("Connection working fine!")
     # Creamos el objeto BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
